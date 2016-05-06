@@ -1,14 +1,13 @@
-angular.module("OmdbClone").config(function($routeProvider) {
+angular.module("OmdbClone").config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'partials/home.html',
-      controller: 'HomeController'
     })
-    .when('/:id', {
+    .when('/movie', {
       templateUrl: 'partials/movie.html',
-      controller: 'MovieController'
     })
     .otherwise({
       redirectTo: '/'
     })
+    $locationProvider.html5Mode(true);
 })

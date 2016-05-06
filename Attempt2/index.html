@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head >
+  <base href="/" >
+  <meta charset="UTF-8">
+  <title >Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+  <script src="js/App.js"></script>
+  <script src="js/services/movieService.js"></script>
+  <script src="js/controllers/mainController.js"></script>
+  <script src="js/controllers/ListController.js"></script>
+  <script src="js/controllers/DetailController.js"></script>
+  <script src="js/router.js"></script>
+</head >
+<body>
+<h1>Enter a movie or tv show name</h1>
+  <!-- <nav>
+    <a ui-sref="home">Home</a>
+  </nav> -->
+
+
+  <div ui-view></div>
+
+</body>
+</html>

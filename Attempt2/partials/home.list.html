@@ -1,0 +1,5 @@
+<ul>
+  <li ng-repeat='item in vm.movies'>
+    <a ui-sref="home.detail({id: item.imdbID})">{{item.Title}}</a>
+  </li>
+</ul>

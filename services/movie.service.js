@@ -39,13 +39,13 @@ angular.module('OmdbClone')
           return post.id === +postId;
         }).pop();
       },
-      getMovie: function(movieName) {
+      getMovie1: function(movieName) {
         var deferred = $q.defer();
         var movie = movieName.split(' ').join('+');
 
-        $http.get(MOVIE_API+'/?t='+movie+'&y=&plot=short&r=json')
+        $http.get(MOVIE_API+'/?s='+movie+'&r=json')
           .success(function(response){
-            deferred.resolve(response);
+            deferred.resolve(response.Search);
           }).error(function(errah){
             deferred.reject(errah);
         })

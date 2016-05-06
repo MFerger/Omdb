@@ -1,14 +1,20 @@
 angular.module("OmdbClone")
-  .controller('HomeController', ["$scope", "$http", "movieService", function($scope, $http, movieService) {
+  .controller('HomeController', ["$scope", "$http", "movieService", "$location", function($scope, $http, movieService, $location) {
 
   $scope.view = {};
-  $scope.view.movies = movieService.posts;
-  // $scope.view.singleMovie = movieServices.postById()
+  $scope.view.targetMovie = function(id) {
+    $http.get('https://omdbapi.com/?i='+id+'&plot=short&r=json').then(function(res){
+      $scope.view.single = res.data;
+    });
+  };
 
   $scope.getMovie = function(movieName) {
-    movieService.getMovie(movieName).then(function(response){
-      $scope.view.movies = movieService.addPost(response);
-    })
-  }
+    $location.path('/')
+    var movie = movieName.split(' ').join('+');
+    $http.get('https://g-omdbapi.herokuapp.com/?s='+movieName+'&r=json').then(function(res){
+      $scope.view.allMovies = res.data.Search;
+      console.log(res.data.Search);
+    });
+  };
 
 }]);

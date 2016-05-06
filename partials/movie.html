@@ -1,11 +1,8 @@
 <span>
-
-  <div ng-bind="movieService.postById(movie.id)">
-    <img ng-src="{{ movie.Poster }}">
-    <h1>{{ movie.Title }}</h1>
-    <p>Release Date: {{ movie.Released }}</p>
-    <p>Rating: {{ movie.Rated }}</p>
-    <p>Plot: {{ movie.Plot }}</p>
-    <p>Actors: {{ movie.Actors }}</p>
-  </div>
+    <img ng-src="{{ view.single.Poster }}">
+    <h1>{{ view.single.Title }}</h1>
+    <p>Release Date: {{ view.single.Released }}</p>
+    <p>Rating: {{ view.single.Rated }}</p>
+    <p>Plot: {{ view.single.Plot }}</p>
+    <p>Actors: {{ view.single.Actors }}</p>
 </span>
